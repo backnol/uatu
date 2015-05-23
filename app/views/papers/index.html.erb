@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Papers</h1>
+
+<% @papers.each do |paper| %>
+    <p>
+      <%= paper.title %>
+    </p>
+    <p><%= paper.text.gsub(/\n/, '<br/>').html_safe %></p>
+    <p><%= paper.image %></p>
+    <p><%= paper.videos %></p>
+    <p><%= paper.tags %></p>
+    <p><%= paper.lang %></p>
+    <p>
+      <%= paper.description %>
+    </p>
+    <p><%= paper.favicon %></p>
+    <p><%= paper.url %></p>
+    <p><%= link_to 'Show', paper %></p>
+    <p><%= link_to 'Edit', edit_paper_path(paper) %></p>
+    <p><%= link_to 'Destroy', paper, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
+
+<br>
+
+<%= link_to 'New Paper', new_paper_path %>

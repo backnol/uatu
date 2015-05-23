@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @paper.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @paper.text %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @paper.image %>
+</p>
+
+<p>
+  <strong>Videos:</strong>
+  <%= @paper.videos %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @paper.tags %>
+</p>
+
+<p>
+  <strong>Lang:</strong>
+  <%= @paper.lang %>
+</p>
+
+<p>
+  <strong>description:</strong>
+  <%= @paper.description %>
+</p>
+
+<p>
+  <strong>Favicon:</strong>
+  <%= @paper.favicon %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @paper.url %>
+</p>
+
+<%= link_to 'Edit', edit_paper_path(@paper) %> |
+<%= link_to 'Back', papers_path %>
