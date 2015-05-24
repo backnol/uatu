@@ -18,15 +18,16 @@ RSpec.describe Paper, type: :model do
         ],
         image: "image.png",
         videos: [],
-        text: "Mission to mars started with ..........."
+        text: "Mission to mars started with ...........",
+        url: "www.newssite.com/mars-colony-thriving"
       }
 
-      Unfluffer.should_receive(:unfluff)
+      expect(Unfluffer).to receive(:unfluff)
         .once
-        .with('www.newssite.com/mars-colony-thriving')
+        .with('www.ns.co/11')
         .and_return(mocked_unfluff_response)
 
-      paper = Paper.new_from_url('www.newssite.com/mars-colony-thriving')
+      paper = Paper.new_from_url('www.ns.co/11')
 
       expect(paper.title).to eq mocked_unfluff_response[:title]
       expect(paper.favicon).to eq mocked_unfluff_response[:favicon]
@@ -35,6 +36,7 @@ RSpec.describe Paper, type: :model do
       expect(paper.tags).to eq mocked_unfluff_response[:tags]
       expect(paper.image).to eq mocked_unfluff_response[:image]
       expect(paper.text).to eq mocked_unfluff_response[:text]
+      expect(paper.url).to eq mocked_unfluff_response[:url]
     end
   end
 end

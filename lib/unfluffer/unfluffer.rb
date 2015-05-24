@@ -1,8 +1,10 @@
 require 'json'
 require 'active_support/all'
+require 'awesome_print'
 module Unfluffer
   def self.unfluff(url)
-    JSON.parse(`node lib/unfluffer/scrape.js #{url}`).with_indifferent_access
+    data = `node lib/unfluffer/scrape.js #{url}`
+    JSON.parse(data).with_indifferent_access
   end
 end
 
