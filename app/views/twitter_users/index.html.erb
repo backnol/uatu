@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Twitter Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Screen name</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Profile image url</th>
+      <th>Profile image url https</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @twitter_users.each do |twitter_user| %>
+      <tr>
+        <td><%= twitter_user.screen_name %></td>
+        <td><%= twitter_user.name %></td>
+        <td><%= twitter_user.description %></td>
+        <td><%= twitter_user.profile_image_url %></td>
+        <td><%= twitter_user.profile_image_url_https %></td>
+        <td><%= link_to 'Show', twitter_user %></td>
+        <td><%= link_to 'Edit', edit_twitter_user_path(twitter_user) %></td>
+        <td><%= link_to 'Destroy', twitter_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Twitter user', new_twitter_user_path %>

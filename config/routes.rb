@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :twitter_users
+
   resources :papers
 
   # The priority is based upon order of creation: first created -> highest priority.
