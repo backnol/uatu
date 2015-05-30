@@ -25,19 +25,22 @@ ActiveRecord::Schema.define(version: 20150526031542) do
     t.string   "lang"
     t.text     "description"
     t.text     "favicon"
-    t.text     "url"
+    t.string   "url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
-  create_table "twitter_users", force: :cascade do |t|
+  add_index "papers", ["url"], name: "index_papers_on_url", unique: true, using: :btree
+
+  create_table "tw_users", force: :cascade do |t|
     t.string   "screen_name"
     t.string   "name"
     t.text     "description"
     t.string   "profile_image_url"
-    t.string   "profile_image_url_https"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
+
+  add_index "tw_users", ["screen_name"], name: "index_tw_users_on_screen_name", unique: true, using: :btree
 
 end

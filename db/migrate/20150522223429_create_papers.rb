@@ -9,9 +9,11 @@ class CreatePapers < ActiveRecord::Migration
       t.string :lang
       t.text :description
       t.text :favicon
-      t.text :url
+      t.string :url
 
       t.timestamps null: false
     end
+
+    add_index :papers, :url, unique: true
   end
 end

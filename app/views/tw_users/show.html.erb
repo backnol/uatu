@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Screen name:</strong>
+  <%= @tw_user.screen_name %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tw_user.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tw_user.description %>
+</p>
+
+<p>
+  <strong>Profile image url:</strong>
+  <%= @tw_user.profile_image_url %>
+</p>
+
+<p>
+  <strong>Profile image url https:</strong>
+  <%= @tw_user.profile_image_url_https %>
+</p>
+
+<%= link_to 'Edit', edit_tw_user_path(@tw_user) %> |
+<%= link_to 'Back', tw_users_path %>
