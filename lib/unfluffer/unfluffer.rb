@@ -5,6 +5,9 @@ module Unfluffer
   def self.unfluff(url)
     data = `node lib/unfluffer/scrape.js #{url}`
     JSON.parse(data).with_indifferent_access
+  rescue Exception => e
+    puts data
+    raise e
   end
 end
 

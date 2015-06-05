@@ -6,4 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-TwUser.new_from_screen_name('backnol').save!
+TwUser.new_from_screen_name('verge').save!
+TwUser.new_from_screen_name('vergescience').save!
+TwUser.new_from_screen_name('gizmodo').save!
+TwUser.new_from_screen_name('engadget').save!
+TwUser.new_from_screen_name('newsycbot').save!
+TwUser.new_from_screen_name('marketwatch').save!
+TwUser.new_from_screen_name('nasa').save!
