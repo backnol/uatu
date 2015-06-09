@@ -4,7 +4,7 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
-    @papers = Paper.order(id: :desc).all
+    @papers = Paper.order(id: :desc).limit(100)
   end
 
   # GET /papers/1

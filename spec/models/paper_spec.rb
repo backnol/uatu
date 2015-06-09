@@ -3,22 +3,22 @@ require 'rails_helper'
 RSpec.describe Paper, type: :model do
   it '.new_from_url returns new paper for url' do
     mocked_unfluff_response = {
-      title: "Mars colony is thriving",
-      favicon: "favicon.ico",
-      description: "Economy, Government, Development doare going well",
-      lang: "en",
-      canonicalLink: "http://example.com",
+      title: 'Mars colony is thriving',
+      favicon: 'favicon.ico',
+      description: 'Economy, Government, Development doare going well',
+      lang: 'en',
+      canonicalLink: 'http://example.com',
       tags: [
-        "Architecture",
-        "Typography",
-        "Concepts",
-        "Politics",
-        "National Security"
+        'Architecture',
+        'Typography',
+        'Concepts',
+        'Politics',
+        'National Security'
       ],
-      image: "image.png",
+      image: 'image.png',
       videos: [],
-      text: "Mission to mars started with ...........",
-      url: "www.newssite.com/mars-colony-thriving"
+      text: 'Mission to mars started with ...........',
+      url: 'www.newssite.com/mars-colony-thriving'
     }
 
     expect(Unfluffer).to receive(:unfluff)
